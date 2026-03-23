@@ -54,10 +54,21 @@ export default function Hero() {
             The most advanced GLP-1 treatment available — activating three metabolic pathways for greater appetite control, energy expenditure, and weight loss. Free physician consultation. Personalized prescribing. Ongoing medical support.
           </p>
 
+          {/* Clinical anchor */}
+          <p
+            className="font-sans text-sm font-medium tracking-wide hero-fade mt-5"
+            style={{
+              color: 'var(--kora-brand)',
+              animationDelay: '220ms',
+            }}
+          >
+            28.7% average weight loss in Phase 3 clinical trials — the highest for any GLP-1 medication.
+          </p>
+
           {/* Value statement */}
           <div
-            className="hero-fade flex items-center justify-center gap-3 mt-6"
-            style={{ animationDelay: '250ms' }}
+            className="hero-fade flex items-center justify-center gap-3 mt-4"
+            style={{ animationDelay: '260ms' }}
           >
             <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Quick.</span>
             <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>·</span>
@@ -84,6 +95,45 @@ export default function Hero() {
           >
             <ShieldCheck size={14} strokeWidth={1.75} />
             <span>Free &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; 15 minutes</span>
+          </div>
+
+          {/* Social proof strip */}
+          <div 
+            className="hero-fade flex items-center justify-center gap-3 mt-6"
+            style={{ animationDelay: '450ms' }}
+          >
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4, 5, 6].map(n => (
+                <Image 
+                  key={n}
+                  src={`/patient-${n}.png`}
+                  alt=""
+                  width={34}
+                  height={34}
+                  className="rounded-full ring-2 object-cover"
+                  style={{ 
+                    width: 34, 
+                    height: 34, 
+                    ringColor: 'var(--kora-bg)',
+                    borderColor: 'var(--kora-bg)',
+                    border: '2px solid var(--kora-bg)'
+                  }}
+                />
+              ))}
+            </div>
+
+            <p 
+              className="font-sans text-sm"
+              style={{ color: 'var(--kora-text-body)' }}
+            >
+              <span 
+                className="font-medium" 
+                style={{ color: 'var(--kora-brand)' }}
+              >
+                500+
+              </span>
+              {' '}patients treated across the Philippines
+            </p>
           </div>
 
           {/* Product image */}

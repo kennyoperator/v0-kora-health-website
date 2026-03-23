@@ -92,7 +92,7 @@ export default function ProgramOverview() {
             >
               <Image
                 src="/kit-reta.png"
-                alt="Kora Health Retatrutide treatment kit — vial, syringes, alcohol pads, and cold-chain packaging"
+                alt="Complete Kora Health Retatrutide kit contents"
                 width={560}
                 height={560}
                 className="w-full h-auto"

@@ -3,6 +3,7 @@ import { Stethoscope, FlaskConical, Snowflake, CalendarCheck, ShieldCheck } from
 const badges = [
   { icon: Stethoscope, label: 'Licensed Physicians' },
   { icon: FlaskConical, label: 'FDA-Regulated Pharmacy' },
+  { icon: ShieldCheck, label: 'Third-Party Tested' },
   { icon: Snowflake, label: 'Cold-Chain Delivery' },
   { icon: CalendarCheck, label: 'Ongoing Follow-Up' },
   { icon: ShieldCheck, label: 'Secure & Confidential' },
