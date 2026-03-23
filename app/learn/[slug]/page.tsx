@@ -5,7 +5,7 @@ import { Stethoscope } from 'lucide-react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import MobileStickyBarBlog from '@/components/layout/MobileStickyBarBlog'
-import CTAButton from '@/components/ui/CTAButton'
+import { ArticleEndCTA } from '@/components/blog/ArticleEndCTA'
 import { MarkdownRenderer } from '@/components/blog/MarkdownRenderer'
 import { ArticleRelatedLinks } from '@/components/blog/ArticleRelatedLinks'
 import { articles, getArticleBySlug, getRelatedArticles } from '@/lib/articles'
@@ -108,31 +108,7 @@ export default async function ArticlePage({ params }: Props) {
           <MarkdownRenderer content={article.content} article={article} />
 
           {/* End-of-article CTA */}
-          <div
-            className="rounded-2xl p-8 md:p-10 text-center mt-12"
-            style={{ backgroundColor: 'var(--kora-surface-alt)' }}
-          >
-            <h2
-              className="font-sans font-bold"
-              style={{
-                fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)',
-                color: 'var(--kora-text-primary)',
-              }}
-            >
-              Start With a Free Consultation
-            </h2>
-            <p
-              className="mt-2 text-sm leading-relaxed"
-              style={{ color: 'var(--kora-text-body)' }}
-            >
-              Talk to a licensed physician about your weight management options. No cost, no pressure.
-            </p>
-            <div className="mt-6">
-              <CTAButton href="/#qualify" variant="primary">
-                Book Your Free Consultation
-              </CTAButton>
-            </div>
-          </div>
+          <ArticleEndCTA />
 
           {/* Disclaimer */}
           <p

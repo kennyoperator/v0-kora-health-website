@@ -37,18 +37,15 @@ export default function Header({ variant = 'default' }: HeaderProps) {
     >
       <div className="w-full max-w-[1120px] mx-auto px-6 md:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-sm" style={{ color: 'var(--kora-text-primary)' }}>
+        <Link href="/" className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-sm">
           <Image
             src="/logo.png"
-            alt="Kora Health logo"
-            width={28}
-            height={28}
-            className="flex-shrink-0"
+            alt="Kora Health"
+            width={120}
+            height={60}
+            className="flex-shrink-0 object-contain"
+            style={{ height: 40, width: 'auto' }}
           />
-          <div className="flex items-baseline">
-            <span className="font-serif text-[20px]" style={{ color: 'var(--kora-text-primary)' }}>Kora</span>
-            <span className="font-sans font-medium text-[20px]" style={{ color: 'var(--kora-text-primary)' }}>&nbsp;Health</span>
-          </div>
         </Link>
 
         {/* Right side */}

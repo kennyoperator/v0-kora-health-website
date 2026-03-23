@@ -11,18 +11,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Column 1 — Brand */}
           <div>
-            <div className="flex items-center gap-2">
+            <div>
               <Image
                 src="/logo.png"
-                alt="Kora Health logo"
-                width={24}
-                height={24}
-                className="flex-shrink-0 brightness-0 invert"
+                alt="Kora Health"
+                width={120}
+                height={60}
+                className="object-contain brightness-0 invert"
+                style={{ height: 36, width: 'auto' }}
               />
-              <div className="flex items-baseline">
-                <span className="font-serif text-[18px] text-white">Kora</span>
-                <span className="font-sans font-medium text-[18px] text-white">&nbsp;Health</span>
-              </div>
             </div>
             <p className="text-sm mt-2" style={{ color: 'var(--kora-footer-text)' }}>
               The Philippines&apos; physician-led metabolic health platform.
