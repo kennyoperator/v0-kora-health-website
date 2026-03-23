@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-PH" className={`${instrumentSerif.variable} ${dmSans.variable}`}>
+    <html lang="en-PH" data-scroll-behavior="smooth" className={`${instrumentSerif.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Analytics />

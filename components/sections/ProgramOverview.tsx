@@ -7,11 +7,8 @@ import {
   PlayCircle,
   CalendarClock,
   RefreshCcw,
-  Syringe,
-  Droplets,
-  Snowflake,
-  BookOpen,
 } from 'lucide-react'
+import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 
 const cards = [
@@ -97,47 +94,31 @@ export default function ProgramOverview() {
 
         {/* Treatment Kit sub-section */}
         <ScrollReveal delay={120}>
-          <div
-            className="max-w-2xl mx-auto mt-10 rounded-2xl p-8"
-            style={{
-              backgroundColor: 'var(--kora-surface)',
-              border: '1px solid var(--kora-border-light)',
-            }}
-          >
-            <h3
-              className="text-[17px] font-medium text-center mb-6"
-              style={{ color: 'var(--kora-text-primary)' }}
+          <div className="mt-10 max-w-2xl mx-auto">
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                backgroundColor: 'var(--kora-surface)',
+                border: '1px solid var(--kora-border-light)',
+              }}
             >
-              Your Kora Treatment Kit
-            </h3>
-
-            {/* Items: flex row on desktop, 2-col grid on mobile */}
-            <div className="grid grid-cols-2 gap-y-5 md:flex md:flex-row md:justify-between md:gap-0">
-              {kitItems.map((item) => {
-                const Icon = item.icon
-                return (
-                  <div key={item.label} className="flex flex-col items-center text-center gap-2">
-                    <Icon size={20} strokeWidth={1.75} style={{ color: 'var(--kora-brand)' }} aria-hidden="true" />
-                    <span className="text-sm" style={{ color: 'var(--kora-text-body)' }}>
-                      {item.label}
-                    </span>
-                  </div>
-                )
-              })}
+              <Image
+                src="/kit.png"
+                alt="Kora Health Tirzepatide treatment kit — vial, insulin syringe, alcohol pads, and cold-chain packaging"
+                width={800}
+                height={800}
+                className="w-full h-auto"
+                priority={false}
+              />
+              <div className="p-6 text-center">
+                <h3 className="font-sans font-medium text-lg" style={{ color: 'var(--kora-text-primary)' }}>
+                  Your Kora Treatment Kit
+                </h3>
+                <p className="text-sm mt-2 leading-relaxed" style={{ color: 'var(--kora-text-body)' }}>
+                  Physician-prescribed tirzepatide, injection supplies, alcohol pads, and cold-chain packaging — compounded in an FDA-regulated Philippine pharmacy and delivered to your door.
+                </p>
+              </div>
             </div>
-
-            <p
-              className="text-xs text-center mt-6"
-              style={{ color: 'var(--kora-text-muted)' }}
-            >
-              All medications compounded in an FDA-regulated Philippine pharmacy and delivered in temperature-controlled packaging.
-            </p>
-            <p
-              className="text-[11px] font-normal text-center mt-2"
-              style={{ color: 'var(--kora-text-muted)' }}
-            >
-              Product photo placeholder — replace with real packaging image
-            </p>
           </div>
         </ScrollReveal>
       </div>

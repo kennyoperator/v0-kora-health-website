@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { MessageSquare, UserCheck, Package, HeartPulse } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import CTAButton from '@/components/ui/CTAButton'
@@ -101,6 +102,18 @@ export default function HowItWorks() {
                       <p className="text-sm mt-1 leading-relaxed" style={{ color: 'var(--kora-text-body)' }}>
                         {step.description}
                       </p>
+                      {step.number === 3 && (
+                        <div className="mt-3 hidden md:block">
+                          <Image
+                            src="/kit.png"
+                            alt="Treatment kit"
+                            width={120}
+                            height={120}
+                            className="rounded-lg mx-auto"
+                            style={{ opacity: 0.9 }}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
 

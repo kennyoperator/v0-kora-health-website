@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ShieldCheck } from 'lucide-react'
 import CTAButton from '@/components/ui/CTAButton'
 
@@ -71,6 +72,24 @@ export default function Hero() {
           >
             <ShieldCheck size={14} strokeWidth={1.75} />
             <span>Free &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; 15 minutes</span>
+          </div>
+
+          {/* Product image */}
+          <div className="hero-fade mt-10" style={{ animationDelay: '400ms' }}>
+            <div className="max-w-sm mx-auto">
+              <Image
+                src="/kit.png"
+                alt="Kora Health Tirzepatide treatment kit"
+                width={400}
+                height={400}
+                className="w-full h-auto rounded-2xl"
+                style={{
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                  border: '1px solid var(--kora-border-light)',
+                }}
+                priority={true}
+              />
+            </div>
           </div>
 
           {/* Bottom of hero */}
