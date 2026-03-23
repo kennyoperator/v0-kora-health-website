@@ -132,6 +132,13 @@ export default function TeamSection() {
           ))}
         </div>
 
+        {/* Physician accountability line */}
+        <ScrollReveal delay={220}>
+          <p className="text-sm text-center mt-4 max-w-md mx-auto" style={{ color: 'var(--kora-text-body)' }}>
+            Every Kora patient is evaluated by a named, licensed physician — not an anonymous provider. A real doctor who reviews your history, monitors your treatment, and is accountable for your care.
+          </p>
+        </ScrollReveal>
+
         {/* Credential bar */}
         <ScrollReveal delay={240}>
           <div className="flex justify-center mt-10">

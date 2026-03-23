@@ -92,6 +92,9 @@ export default function ResultsSection() {
         </div>
 
         <ScrollReveal delay={240}>
+          <p className="text-sm text-center mt-6 mb-4" style={{ color: 'var(--kora-text-muted)' }}>
+            For context: semaglutide-based programs show approximately 14.9% average weight loss. Tirzepatide shows 20.2%. Retatrutide&apos;s 28.7% represents the most advanced clinical data available.
+          </p>
           <div
             className="max-w-md mx-auto mt-10 rounded-2xl overflow-hidden"
             style={{

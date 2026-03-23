@@ -11,6 +11,7 @@ const others = [
   'No prescription or physician oversight',
   'Zero follow-up after purchase',
   'Anonymous sellers with no accountability',
+  'Anonymous or unnamed providers',
 ]
 
 const kora = [
@@ -19,6 +20,7 @@ const kora = [
   'Cold-chain delivery protecting medication integrity',
   'Structured onboarding and weekly medical check-ins',
   'Named founders and licensed physicians behind every treatment',
+  'Named physician with displayed credentials and license number',
 ]
 
 const comparison = [
@@ -210,6 +212,17 @@ export default function WhyKora() {
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Pharmacy trust line */}
+        <ScrollReveal delay={200}>
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mt-8">
+            <span className="text-xs" style={{ color: 'var(--kora-text-muted)' }}>Compounded in FDA-regulated Philippine pharmacies</span>
+            <span className="text-xs" style={{ color: 'var(--kora-border)' }}>·</span>
+            <span className="text-xs" style={{ color: 'var(--kora-text-muted)' }}>Third-party tested for potency, sterility &amp; purity</span>
+            <span className="text-xs" style={{ color: 'var(--kora-border)' }}>·</span>
+            <span className="text-xs" style={{ color: 'var(--kora-text-muted)' }}>Certificate of Analysis available for every batch</span>
+          </div>
+        </ScrollReveal>
 
         {/* CTA */}
         <ScrollReveal delay={240}>

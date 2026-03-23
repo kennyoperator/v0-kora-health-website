@@ -49,6 +49,14 @@ const faqs = [
     q: 'Why should I trust a new brand?',
     a: 'We display our founders\' real names and faces, our physician credentials and license numbers, our pharmacy sourcing, and our business registration. Kora Health is built as a long-term physician-led medical platform, not a pop-up operation.',
   },
+  {
+    q: 'What payment methods do you accept?',
+    a: 'We accept GCash, Maya, bank transfer, and all major credit cards. All pricing is in Philippine pesos with no hidden fees or currency conversion.',
+  },
+  {
+    q: 'How is retatrutide different from semaglutide programs?',
+    a: 'Semaglutide — the ingredient in Ozempic and most compounded weight loss injections — activates one metabolic receptor. Retatrutide activates three: GLP-1, GIP, and glucagon. In clinical trials, retatrutide produced 28.7% average weight loss compared to approximately 14.9% for semaglutide. Kora Health offers retatrutide through a physician-led program with named doctor oversight, FDA-regulated compounding, and structured follow-up care.',
+  },
 ]
 
 export default function FAQSection() {

@@ -40,6 +40,12 @@ export default function WhatIsRetatrutide() {
               className="text-[15px] leading-relaxed"
               style={{ color: 'var(--kora-text-body)' }}
             >
+              In the Philippines, where metabolic health conditions including obesity and type 2 diabetes are rising — particularly in urban centers — access to advanced physician-led treatment has been limited. Kora Health exists to change that.
+            </p>
+            <p
+              className="text-[15px] leading-relaxed"
+              style={{ color: 'var(--kora-text-body)' }}
+            >
               Where semaglutide (Ozempic) targets one receptor and tirzepatide (Mounjaro) targets two, retatrutide targets all three. The glucagon pathway — unique to retatrutide — increases resting energy expenditure and accelerates liver fat clearance. Some people refer to it as &ldquo;reta&rdquo; in health communities and online forums.
             </p>
             <p

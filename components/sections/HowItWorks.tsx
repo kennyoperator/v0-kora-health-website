@@ -10,25 +10,25 @@ const steps = [
     number: 1,
     icon: MessageSquare,
     title: 'Free Consultation',
-    description: 'Share your goals and medical history. Takes under 5 minutes.',
+    description: 'Share your goals and medical history. Takes under 5 minutes. 100% online. No clinic visits. No waiting rooms.',
   },
   {
     number: 2,
     icon: UserCheck,
     title: 'Physician Evaluation',
-    description: 'A licensed doctor reviews your case and creates a personalized plan.',
+    description: 'A named, Philippine-licensed doctor reviews your case, evaluates your medical history, and creates a personalized treatment plan.',
   },
   {
     number: 3,
     icon: Package,
     title: 'Treatment Delivered',
-    description: 'Your retatrutide treatment is compounded in an FDA-regulated pharmacy and delivered in temperature-controlled packaging.',
+    description: 'Your retatrutide treatment is compounded in an FDA-regulated Philippine pharmacy, third-party tested for potency and sterility, and delivered in temperature-controlled packaging.',
   },
   {
     number: 4,
     icon: HeartPulse,
     title: 'Ongoing Support',
-    description: 'Weekly check-ins, dose adjustments, and direct access to your care team.',
+    description: 'Weekly check-ins, dose adjustments, and direct access to your care team — by video call, phone, or message.',
   },
 ]
 
