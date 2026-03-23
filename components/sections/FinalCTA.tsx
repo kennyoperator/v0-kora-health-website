@@ -43,6 +43,28 @@ export default function FinalCTA() {
               <p className="text-sm mt-4" style={{ color: 'var(--kora-text-muted)' }}>
                 Licensed physicians &nbsp;·&nbsp; FDA-regulated pharmacy &nbsp;·&nbsp; No hidden fees
               </p>
+              <div className="flex items-center justify-center md:justify-start gap-2 mt-6">
+                <div className="flex -space-x-1.5">
+                  {[2, 4, 6].map(n => (
+                    <Image
+                      key={n}
+                      src={`/patient-${n}.png`}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="rounded-full object-cover"
+                      style={{
+                        width: 28,
+                        height: 28,
+                        border: '2px solid var(--kora-surface-alt)',
+                      }}
+                    />
+                  ))}
+                </div>
+                <p className="text-xs" style={{ color: 'var(--kora-text-muted)' }}>
+                  Join 500+ patients across the Philippines
+                </p>
+              </div>
             </div>
 
             {/* Right — aspirational image */}

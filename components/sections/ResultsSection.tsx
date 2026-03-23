@@ -95,6 +95,28 @@ export default function ResultsSection() {
           <p className="text-sm text-center mt-6 mb-4" style={{ color: 'var(--kora-text-muted)' }}>
             For context: semaglutide-based programs show approximately 14.9% average weight loss. Tirzepatide shows 20.2%. Retatrutide&apos;s 28.7% represents the most advanced clinical data available.
           </p>
+          <div className="flex items-center justify-center gap-2 mt-4 mb-6">
+            <div className="flex -space-x-1.5">
+              {[1, 3, 5].map(n => (
+                <Image
+                  key={n}
+                  src={`/patient-${n}.png`}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="rounded-full object-cover"
+                  style={{
+                    width: 28,
+                    height: 28,
+                    border: '2px solid var(--kora-bg)',
+                  }}
+                />
+              ))}
+            </div>
+            <p className="text-xs" style={{ color: 'var(--kora-text-muted)' }}>
+              500+ patients treated with physician-led GLP-1 programs
+            </p>
+          </div>
           <div
             className="max-w-md mx-auto mt-10 rounded-2xl overflow-hidden"
             style={{
