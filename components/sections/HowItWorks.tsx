@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { MessageSquare, UserCheck, Package, HeartPulse } from 'lucide-react'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import CTAButton from '@/components/ui/CTAButton'
@@ -21,7 +22,7 @@ const steps = [
     number: 3,
     icon: Package,
     title: 'Treatment Delivered',
-    description: 'Medication compounded in an FDA-regulated pharmacy, shipped cold-chain.',
+    description: 'Your retatrutide treatment is compounded in an FDA-regulated pharmacy and delivered in temperature-controlled packaging.',
   },
   {
     number: 4,
@@ -45,7 +46,7 @@ export default function HowItWorks() {
       <div className="max-w-[1120px] mx-auto px-6 md:px-8">
         <ScrollReveal>
           <h2
-            className="font-serif text-center"
+            className="font-sans font-bold text-center"
             style={{
               fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
               lineHeight: 1.15,
@@ -124,6 +125,26 @@ export default function HowItWorks() {
                     <p className="text-sm mt-1 leading-relaxed" style={{ color: 'var(--kora-text-body)' }}>
                       {step.description}
                     </p>
+                    {step.number === 1 && (
+                      <div className="mt-4">
+                        <Image src="/img-consultation.png" alt="Video consultation with physician" width={180} height={180} className="rounded-xl mx-auto" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }} />
+                      </div>
+                    )}
+                    {step.number === 2 && (
+                      <div className="mt-4">
+                        <Image src="/img-doctor.png" alt="Doctor reviewing patient information" width={180} height={180} className="rounded-xl mx-auto" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }} />
+                      </div>
+                    )}
+                    {step.number === 3 && (
+                      <div className="mt-4">
+                        <Image src="/coldchain-reta.png" alt="Kora Health retatrutide in cold-chain packaging" width={180} height={180} className="rounded-xl mx-auto" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }} />
+                      </div>
+                    )}
+                    {step.number === 4 && (
+                      <div className="mt-4">
+                        <Image src="/img-ongoing-support.png" alt="Patient receiving ongoing care support via phone" width={180} height={180} className="rounded-xl mx-auto" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }} />
+                      </div>
+                    )}
                   </div>
                 </ScrollReveal>
               )

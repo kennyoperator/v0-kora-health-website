@@ -46,7 +46,7 @@ export default function ThankYouPage() {
 
         {/* Heading */}
         <h1
-          className="font-serif mt-6"
+          className="font-sans font-bold mt-6"
           style={{
             fontSize: 'clamp(1.75rem, 4vw, 2.25rem)',
             lineHeight: 1.2,

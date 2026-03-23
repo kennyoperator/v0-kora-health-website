@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         style={{ paddingTop: 'calc(5rem + 4rem)' }}
       >
         <h1
-          className="font-serif"
+          className="font-sans font-bold"
           style={{
             fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
             lineHeight: 1.15,

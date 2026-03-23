@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Instagram, Facebook } from 'lucide-react'
 
 export default function Footer() {
@@ -10,9 +11,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Column 1 — Brand */}
           <div>
-            <div className="flex items-baseline gap-0">
-              <span className="font-serif text-[18px] text-white">Kora</span>
-              <span className="font-sans font-medium text-[18px] text-white">&nbsp;Health</span>
+            <div>
+              <Image
+                src="/logo.png"
+                alt="Kora Health"
+                width={120}
+                height={60}
+                className="object-contain brightness-0 invert"
+                style={{ height: 36, width: 'auto' }}
+              />
             </div>
             <p className="text-sm mt-2" style={{ color: 'var(--kora-footer-text)' }}>
               The Philippines&apos; physician-led metabolic health platform.
@@ -52,6 +59,7 @@ export default function Footer() {
                 { label: 'Our Team', href: '#team' },
                 { label: 'Program', href: '#program' },
                 { label: 'FAQs', href: '#faq' },
+                { label: 'Journal', href: '/learn' },
                 { label: 'Contact Us', href: 'mailto:hello@korahealth.ph' },
                 { label: 'Privacy Policy', href: '/privacy' },
                 { label: 'Terms of Service', href: '/terms' },

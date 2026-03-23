@@ -6,6 +6,7 @@ import './globals.css'
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   weight: ['400'],
+  style: ['normal'],
   variable: '--font-instrument-serif',
 })
 
@@ -16,17 +17,21 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Kora Health — Physician-Led Weight Management in the Philippines',
+  title: 'Retatrutide in the Philippines | Physician-Led Treatment | Kora Health',
   description:
-    'Kora Health is the Philippines\' physician-led metabolic health platform. Free consultation, personalized prescription, and ongoing medical support — all online.',
-  keywords: 'tirzepatide Philippines, GLP-1 weight loss Philippines, physician-led weight management, telehealth Philippines, metabolic health',
+    'Physician-led retatrutide treatment in the Philippines. Free consultation, personalized prescribing, FDA-regulated compounding, cold-chain delivery, and ongoing medical support.',
+  keywords: 'retatrutide philippines, retatrutide treatment, triple agonist weight loss, physician-led metabolic health, reta philippines',
   openGraph: {
-    title: 'Kora Health — Physician-Led Weight Management',
-    description: 'Free consultation. Personalized prescription. Cold-chain delivery. Real medical care for weight management.',
+    title: 'Retatrutide Treatment in the Philippines | Kora Health',
+    description: 'Physician-led retatrutide program. Free consultation. FDA-regulated pharmacy. Cold-chain delivery.',
     type: 'website',
     locale: 'en_PH',
   },
   themeColor: '#FAF9F7',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export default function RootLayout({
@@ -35,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-PH" className={`${instrumentSerif.variable} ${dmSans.variable}`}>
+    <html lang="en-PH" data-scroll-behavior="smooth" className={`${instrumentSerif.variable} ${dmSans.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Analytics />

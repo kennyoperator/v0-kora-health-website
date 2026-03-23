@@ -135,6 +135,15 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+/* Blog article link hover — used in server components where onMouseEnter is not allowed */
+.kora-article-link {
+  color: var(--kora-text-primary);
+  transition: color 0.2s ease;
+}
+.kora-article-link:hover {
+  color: var(--kora-brand);
+}
+
 /* Hide scrollbar */
 .hide-scrollbar {
   -ms-overflow-style: none;

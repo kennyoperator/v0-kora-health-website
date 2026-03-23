@@ -1,5 +1,9 @@
+'use client'
+
 import { X, Check } from 'lucide-react'
+import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+import CTAButton from '@/components/ui/CTAButton'
 
 const others = [
   'No medical consultation or screening',
@@ -17,7 +21,38 @@ const kora = [
   'Named founders and licensed physicians behind every treatment',
 ]
 
+const comparison = [
+  {
+    name: 'Semaglutide',
+    brand: '(Ozempic)',
+    stat: '~14.9%',
+    mechanism: 'GLP-1 only',
+    receptors: '1 receptor',
+    highlight: false,
+  },
+  {
+    name: 'Tirzepatide',
+    brand: '(Mounjaro)',
+    stat: '~20.2%',
+    mechanism: 'GLP-1 + GIP',
+    receptors: '2 receptors',
+    highlight: false,
+  },
+  {
+    name: 'Retatrutide',
+    brand: '(Kora Health)',
+    stat: '~28.7%',
+    mechanism: 'GLP-1 + GIP + Glucagon',
+    receptors: '3 receptors',
+    highlight: true,
+  },
+]
+
 export default function WhyKora() {
+  const scrollToForm = () => {
+    document.getElementById('qualify')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section
       className="py-16 md:py-28"
@@ -26,7 +61,7 @@ export default function WhyKora() {
       <div className="max-w-[1120px] mx-auto px-6 md:px-8">
         <ScrollReveal>
           <h2
-            className="font-serif text-center"
+            className="font-sans font-bold text-center"
             style={{
               fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
               lineHeight: 1.15,
@@ -43,7 +78,71 @@ export default function WhyKora() {
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        {/* Comparison table */}
+        <ScrollReveal delay={80}>
+          <p
+            className="font-medium text-lg text-center mt-12 mb-6"
+            style={{ color: 'var(--kora-text-primary)' }}
+          >
+            How Retatrutide Compares
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {comparison.map((item) => (
+              <div
+                key={item.name}
+                className="rounded-xl p-5 text-center"
+                style={{
+                  backgroundColor: item.highlight ? '#fff' : 'var(--kora-surface)',
+                  border: item.highlight
+                    ? '1.5px solid var(--kora-brand)'
+                    : '1px solid var(--kora-border-light)',
+                  boxShadow: item.highlight ? '0 4px 16px rgba(0,0,0,0.07)' : 'none',
+                }}
+              >
+                <p
+                  className="text-sm font-medium"
+                  style={{ color: item.highlight ? 'var(--kora-brand)' : 'var(--kora-text-primary)' }}
+                >
+                  {item.name}
+                </p>
+                <p className="text-xs" style={{ color: 'var(--kora-text-muted)' }}>
+                  {item.brand}
+                </p>
+                <p
+                  className="font-sans font-bold mt-3"
+                  style={{
+                    fontSize: 32,
+                    lineHeight: 1,
+                    color: item.highlight ? 'var(--kora-brand)' : 'var(--kora-text-body)',
+                  }}
+                >
+                  {item.stat}
+                </p>
+                <p className="text-xs mt-1" style={{ color: 'var(--kora-text-muted)' }}>
+                  avg weight loss
+                </p>
+                <p
+                  className="text-xs mt-2"
+                  style={{ color: item.highlight ? 'var(--kora-brand)' : 'var(--kora-text-muted)' }}
+                >
+                  {item.mechanism}
+                </p>
+                <p
+                  className="text-xs"
+                  style={{ color: item.highlight ? 'var(--kora-brand)' : 'var(--kora-text-muted)' }}
+                >
+                  {item.receptors}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-center mt-4" style={{ color: 'var(--kora-text-muted)' }}>
+            Cross-trial comparisons have limitations. Individual results vary. Published peer-reviewed data.
+          </p>
+        </ScrollReveal>
+
+        {/* Typical Sellers vs Kora Health */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {/* Others card */}
           <ScrollReveal delay={80}>
             <div
@@ -88,6 +187,16 @@ export default function WhyKora() {
               >
                 Kora Health
               </p>
+              <div className="mb-4 rounded-xl overflow-hidden">
+                <Image
+                  src="/coldchain-reta.png"
+                  alt="Temperature-controlled retatrutide packaging"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto"
+                  style={{ maxHeight: '200px', objectFit: 'cover', objectPosition: 'center' }}
+                />
+              </div>
               <ul className="flex flex-col gap-3">
                 {kora.map(item => (
                   <li key={item} className="flex items-start gap-3">
@@ -101,6 +210,15 @@ export default function WhyKora() {
             </div>
           </ScrollReveal>
         </div>
+
+        {/* CTA */}
+        <ScrollReveal delay={240}>
+          <div className="flex justify-center mt-8">
+            <CTAButton variant="primary" onClick={scrollToForm}>
+              Book Your Free Consultation
+            </CTAButton>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

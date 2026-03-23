@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ShieldCheck } from 'lucide-react'
 import CTAButton from '@/components/ui/CTAButton'
 
@@ -25,12 +26,12 @@ export default function Hero() {
               padding: '6px 16px',
             }}
           >
-            Physician-Led &nbsp;·&nbsp; FDA-Regulated &nbsp;·&nbsp; Philippines
+            Triple-Agonist Treatment &nbsp;·&nbsp; Physician-Led &nbsp;·&nbsp; Philippines
           </div>
 
           {/* Headline */}
           <h1
-            className="hero-fade font-serif mt-6 text-balance"
+            className="hero-fade font-sans font-bold mt-6 text-balance"
             style={{
               animationDelay: '100ms',
               fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
@@ -39,7 +40,7 @@ export default function Hero() {
               color: 'var(--kora-text-primary)',
             }}
           >
-            Lose Weight With Real Medical Treatment. Prescribed by Licensed Doctors. Delivered to Your Door.
+            Retatrutide Treatment in the Philippines. Physician-Prescribed. Triple-Agonist. Delivered to Your Door.
           </h1>
 
           {/* Subheadline */}
@@ -50,8 +51,20 @@ export default function Hero() {
               color: 'var(--kora-text-body)',
             }}
           >
-            Kora Health is the Philippines&apos; physician-led weight management platform. Free consultation, personalized prescription, ongoing medical support — all online.
+            The most advanced GLP-1 treatment available — activating three metabolic pathways for greater appetite control, energy expenditure, and weight loss. Free physician consultation. Personalized prescribing. Ongoing medical support.
           </p>
+
+          {/* Value statement */}
+          <div
+            className="hero-fade flex items-center justify-center gap-3 mt-6"
+            style={{ animationDelay: '250ms' }}
+          >
+            <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Quick.</span>
+            <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>·</span>
+            <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Easy.</span>
+            <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>·</span>
+            <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Discreet.</span>
+          </div>
 
           {/* Primary CTA */}
           <div className="hero-fade mt-8" style={{ animationDelay: '300ms' }}>
@@ -73,6 +86,27 @@ export default function Hero() {
             <span>Free &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; 15 minutes</span>
           </div>
 
+          {/* Product image */}
+          <div className="hero-fade mt-10" style={{ animationDelay: '400ms' }}>
+            <div className="max-w-sm mx-auto">
+              <Image
+                src="/img-consultation.png"
+                alt="Patient consulting with a Kora Health physician via video call"
+                width={400}
+                height={400}
+                className="w-full h-auto rounded-2xl"
+                style={{
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
+                  border: '1px solid var(--kora-border-light)',
+                }}
+                priority={true}
+              />
+              <p className="text-xs text-center mt-3" style={{ color: 'var(--kora-text-muted)' }}>
+                Consult with a licensed physician from home
+              </p>
+            </div>
+          </div>
+
           {/* Bottom of hero */}
           <div
             className="hero-fade mt-12 pt-6 text-sm"
@@ -82,7 +116,7 @@ export default function Hero() {
               color: 'var(--kora-text-muted)',
             }}
           >
-            Serving patients across Metro Manila, Cebu, and Davao
+            Now accepting consultations across the Philippines
           </div>
         </div>
       </div>
