@@ -28,6 +28,128 @@ export default function WhatIsRetatrutide() {
           </h2>
         </ScrollReveal>
 
+        <ScrollReveal delay={60}>
+          <div className="flex justify-center my-8">
+            <svg
+              viewBox="0 0 280 80"
+              className="max-w-[280px] mx-auto opacity-80"
+              style={{ width: '100%', height: 'auto' }}
+            >
+              <style>{`
+                @keyframes fillPulse1 {
+                  0% { fill: transparent; transform: scale(1); }
+                  5% { fill: #1B3A5C; }
+                  25% { transform: scale(1.12); }
+                  45% { transform: scale(1); }
+                  100% { transform: scale(1); }
+                }
+                @keyframes fillPulse2 {
+                  0%, 12% { fill: transparent; transform: scale(1); }
+                  17% { fill: #1B3A5C; }
+                  37% { transform: scale(1.12); }
+                  57% { transform: scale(1); }
+                  100% { transform: scale(1); }
+                }
+                @keyframes fillPulse3 {
+                  0%, 24% { fill: transparent; transform: scale(1); }
+                  29% { fill: #1B3A5C; }
+                  49% { transform: scale(1.12); }
+                  69% { transform: scale(1); }
+                  100% { transform: scale(1); }
+                }
+                @keyframes syncPulse {
+                  0%, 44% { transform: scale(1); }
+                  50% { transform: scale(1.12); }
+                  56% { transform: scale(1); }
+                  62% { transform: scale(1.12); }
+                  68% { transform: scale(1); }
+                  100% { transform: scale(1); }
+                }
+                @keyframes fadeOut {
+                  0%, 88% { fill: #1B3A5C; }
+                  100% { fill: transparent; }
+                }
+              `}</style>
+              
+              {/* Connecting lines */}
+              <line x1="86" y1="40" x2="124" y2="40" stroke="#1B3A5C" strokeWidth="1" opacity="0.3" />
+              <line x1="156" y1="40" x2="194" y2="40" stroke="#1B3A5C" strokeWidth="1" opacity="0.3" />
+              
+              {/* Circle 1: GLP-1 */}
+              <circle
+                cx="70"
+                cy="40"
+                r="16"
+                stroke="#1B3A5C"
+                strokeWidth="1.5"
+                fill="transparent"
+                style={{
+                  animation: 'fillPulse1 5s ease-in-out infinite, syncPulse 5s ease-in-out infinite, fadeOut 5s ease-in-out infinite',
+                  transformOrigin: '70px 40px'
+                }}
+              />
+              <text
+                x="70"
+                y="60"
+                fontSize="9"
+                fill="#1B3A5C"
+                fontFamily="var(--font-dm-sans)"
+                textAnchor="middle"
+              >
+                GLP-1
+              </text>
+              
+              {/* Circle 2: GIP */}
+              <circle
+                cx="140"
+                cy="40"
+                r="16"
+                stroke="#1B3A5C"
+                strokeWidth="1.5"
+                fill="transparent"
+                style={{
+                  animation: 'fillPulse2 5s ease-in-out infinite, syncPulse 5s ease-in-out infinite, fadeOut 5s ease-in-out infinite',
+                  transformOrigin: '140px 40px'
+                }}
+              />
+              <text
+                x="140"
+                y="60"
+                fontSize="9"
+                fill="#1B3A5C"
+                fontFamily="var(--font-dm-sans)"
+                textAnchor="middle"
+              >
+                GIP
+              </text>
+              
+              {/* Circle 3: Glucagon */}
+              <circle
+                cx="210"
+                cy="40"
+                r="16"
+                stroke="#1B3A5C"
+                strokeWidth="1.5"
+                fill="transparent"
+                style={{
+                  animation: 'fillPulse3 5s ease-in-out infinite, syncPulse 5s ease-in-out infinite, fadeOut 5s ease-in-out infinite',
+                  transformOrigin: '210px 40px'
+                }}
+              />
+              <text
+                x="210"
+                y="60"
+                fontSize="9"
+                fill="#1B3A5C"
+                fontFamily="var(--font-dm-sans)"
+                textAnchor="middle"
+              >
+                Glucagon
+              </text>
+            </svg>
+          </div>
+        </ScrollReveal>
+
         <ScrollReveal delay={80}>
           <div className="max-w-3xl mx-auto mt-8 text-center space-y-4">
             <p
