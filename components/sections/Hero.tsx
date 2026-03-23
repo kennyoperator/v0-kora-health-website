@@ -30,7 +30,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1
-            className="hero-fade font-serif mt-6 text-balance"
+            className="hero-fade font-sans font-bold mt-6 text-balance"
             style={{
               animationDelay: '100ms',
               fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',

@@ -45,7 +45,7 @@ export default function TeamSection() {
       <div className="max-w-[1120px] mx-auto px-6 md:px-8">
         <ScrollReveal>
           <h2
-            className="font-serif text-center"
+            className="font-sans font-bold text-center"
             style={{
               fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
               lineHeight: 1.15,

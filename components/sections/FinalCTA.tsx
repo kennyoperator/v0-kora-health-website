@@ -16,7 +16,7 @@ export default function FinalCTA() {
       <div className="max-w-[1120px] mx-auto px-6 md:px-8">
         <ScrollReveal>
           <h2
-            className="font-serif"
+            className="font-sans font-bold"
             style={{
               fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
               lineHeight: 1.15,
