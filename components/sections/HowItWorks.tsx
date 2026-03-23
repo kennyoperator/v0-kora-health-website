@@ -137,7 +137,7 @@ export default function HowItWorks() {
                     )}
                     {step.number === 3 && (
                       <div className="mt-4">
-                        <Image src="/coldchain-reta.png" alt="Kora Health retatrutide in cold-chain packaging" width={180} height={180} className="rounded-xl mx-auto" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }} />
+                        <Image src="/img-vial-person.png" alt="Patient holding Kora Health Retatrutide vial" width={180} height={180} className="rounded-xl mx-auto" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }} />
                       </div>
                     )}
                     {step.number === 4 && (
