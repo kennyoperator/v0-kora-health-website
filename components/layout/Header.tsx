@@ -41,8 +41,9 @@ export default function Header({ variant = 'default' }: HeaderProps) {
           <Image
             src="/logo.png"
             alt="Kora Health"
-            width={140}
-            height={40}
+            width={0}
+            height={0}
+            sizes="140px"
             className="flex-shrink-0 object-contain"
             style={{ height: 36, width: 'auto' }}
           />

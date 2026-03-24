@@ -6,18 +6,18 @@ import CTAButton from '@/components/ui/CTAButton'
 
 const founders = [
   {
-    initial: 'K.O.',
+    src: '/founder-kenny.png',
     name: 'Kenny',
     title: 'Co-Founder',
     quote:
-      '"We saw too many Filipinos risking their health with unverified sellers. Kora exists to offer a legitimate, physician-led alternative."',
+      '"I spent months trying to find a legitimate retatrutide provider in the Philippines. Every option was either anonymous, unregulated, or overpriced with no medical oversight. So we built one."',
   },
   {
-    initial: 'J',
+    src: '/founder-james.png',
     name: 'James',
     title: 'Co-Founder',
     quote:
-      '"Access to metabolic health treatment shouldn\'t require navigating a broken, unregulated market. We\'re building the right way."',
+      '"The bar for metabolic health treatment in the Philippines shouldn\'t be \'hope the Viber seller sends you the right thing.\' We built Kora to be the option we wished existed."',
   },
 ]
 
@@ -74,28 +74,23 @@ export default function TeamSection() {
           {founders.map((person, i) => (
             <ScrollReveal key={person.name} delay={i * 80}>
               <div className="text-center">
-                <div className="flex flex-col items-center">
+                <div className="flex justify-center">
                   <div
-                    className="flex items-center justify-center rounded-full mx-auto font-sans font-semibold"
+                    className="rounded-full overflow-hidden"
                     style={{
-                      width: 96,
-                      height: 96,
-                      backgroundColor: 'var(--kora-brand-subtle)',
+                      width: 120,
+                      height: 120,
                       border: '2px solid var(--kora-border)',
-                      fontSize: 32,
-                      color: 'var(--kora-brand)',
-                      lineHeight: 1,
                     }}
-                    aria-label={`Avatar for ${person.name}`}
                   >
-                    {person.initial}
+                    <Image
+                      src={person.src}
+                      alt={`${person.name} - Co-Founder, Kora Health`}
+                      width={120}
+                      height={120}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p
-                    className="text-[11px] font-normal mt-1.5"
-                    style={{ color: 'var(--kora-text-muted)' }}
-                  >
-                    Photo coming soon
-                  </p>
                 </div>
                 <p
                   className="text-lg font-medium mt-4"
