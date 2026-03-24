@@ -40,12 +40,12 @@ export default function Hero() {
               color: 'var(--kora-text-primary)',
             }}
           >
-            Retatrutide Treatment in the Philippines. Physician-Prescribed. Triple-Agonist. Delivered to Your Door.
+            Retatrutide Treatment in the Philippines Delivered To Your Door.
           </h1>
 
           {/* Subheadline */}
           <p
-            className="hero-fade text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed"
+            className="hero-fade text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed"
             style={{
               animationDelay: '200ms',
               color: 'var(--kora-text-body)',
