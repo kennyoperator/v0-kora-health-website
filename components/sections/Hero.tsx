@@ -1,20 +1,58 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import { ShieldCheck } from 'lucide-react'
 import CTAButton from '@/components/ui/CTAButton'
 
 export default function Hero() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e
+    const x = (clientX / window.innerWidth - 0.5) * 20
+    const y = (clientY / window.innerHeight - 0.5) * 20
+    setMousePos({ x, y })
+  }
+
   const scrollToForm = () => {
     document.getElementById('qualify')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const isIdle = mousePos.x === 0 && mousePos.y === 0
+
   return (
     <section
       className="pt-24 pb-12 md:pt-28 md:pb-16 text-center"
-      style={{ backgroundColor: 'var(--kora-bg)' }}
+      style={{ backgroundColor: 'var(--kora-bg)', position: 'relative', overflow: 'hidden' }}
+      onMouseMove={handleMouseMove}
     >
-      <div className="max-w-[1120px] mx-auto px-6 md:px-8">
+      {/* Floating vial background — desktop only */}
+      <div
+        className="absolute pointer-events-none select-none hidden md:block"
+        style={{
+          right: '-5%',
+          top: '50%',
+          transform: isIdle
+            ? undefined
+            : `translate(${mousePos.x}px, calc(${mousePos.y}px - 50%)) rotate(${mousePos.x * 0.3}deg)`,
+          transition: 'transform 0.3s ease-out',
+          animation: isIdle ? 'gentleFloat 6s ease-in-out infinite' : 'none',
+          opacity: 0.08,
+          zIndex: 0,
+        }}
+      >
+        <Image
+          src="/reta-vial-hero.png"
+          alt=""
+          width={600}
+          height={600}
+          className="w-[400px] md:w-[550px] lg:w-[650px] h-auto"
+          priority
+        />
+      </div>
+
+      <div className="max-w-[1120px] mx-auto px-6 md:px-8" style={{ position: 'relative', zIndex: 1 }}>
         <div className="max-w-3xl mx-auto">
           {/* Eyebrow badge */}
           <div
@@ -26,7 +64,7 @@ export default function Hero() {
               padding: '6px 16px',
             }}
           >
-            Triple-Agonist Treatment &nbsp;·&nbsp; Physician-Led &nbsp;·&nbsp; Philippines
+            {'Triple-Agonist Treatment · Physician-Led · Philippines'}
           </div>
 
           {/* Headline */}
@@ -71,9 +109,9 @@ export default function Hero() {
             style={{ animationDelay: '260ms' }}
           >
             <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Quick.</span>
-            <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>·</span>
+            <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>{'·'}</span>
             <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Easy.</span>
-            <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>·</span>
+            <span style={{ color: 'var(--kora-border)', fontSize: '18px', lineHeight: 1 }}>{'·'}</span>
             <span className="font-sans font-medium text-sm tracking-wide" style={{ color: 'var(--kora-brand)' }}>Discreet.</span>
           </div>
 
@@ -94,67 +132,7 @@ export default function Hero() {
             style={{ animationDelay: '360ms', color: 'var(--kora-text-muted)' }}
           >
             <ShieldCheck size={14} strokeWidth={1.75} />
-            <span>Free &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; 15 minutes</span>
-          </div>
-
-          {/* Social proof strip */}
-          <div 
-            className="hero-fade flex items-center justify-center gap-3 mt-6"
-            style={{ animationDelay: '450ms' }}
-          >
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4, 5, 6].map(n => (
-                <Image 
-                  key={n}
-                  src={`/patient-${n}.png`}
-                  alt=""
-                  width={34}
-                  height={34}
-                  className="rounded-full ring-2 object-cover"
-                  style={{ 
-                    width: 34, 
-                    height: 34, 
-                    ringColor: 'var(--kora-bg)',
-                    borderColor: 'var(--kora-bg)',
-                    border: '2px solid var(--kora-bg)'
-                  }}
-                />
-              ))}
-            </div>
-
-            <p 
-              className="font-sans text-sm"
-              style={{ color: 'var(--kora-text-body)' }}
-            >
-              <span 
-                className="font-medium" 
-                style={{ color: 'var(--kora-brand)' }}
-              >
-                500+
-              </span>
-              {' '}patients treated across the Philippines
-            </p>
-          </div>
-
-          {/* Product image */}
-          <div className="hero-fade mt-10" style={{ animationDelay: '400ms' }}>
-            <div className="max-w-sm mx-auto">
-              <Image
-                src="/img-consultation.png"
-                alt="Patient consulting with a Kora Health physician via video call"
-                width={400}
-                height={400}
-                className="w-full h-auto rounded-2xl"
-                style={{
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                  border: '1px solid var(--kora-border-light)',
-                }}
-                priority={true}
-              />
-              <p className="text-xs text-center mt-3" style={{ color: 'var(--kora-text-muted)' }}>
-                Consult with a licensed physician from home
-              </p>
-            </div>
+            <span>{'Free · No obligation · 15 minutes'}</span>
           </div>
 
           {/* Bottom of hero */}
