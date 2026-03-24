@@ -1,4 +1,5 @@
 import { Stethoscope, FlaskConical, Snowflake, CalendarCheck, ShieldCheck } from 'lucide-react'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 
 const badges = [
   { icon: Stethoscope, label: 'Licensed Physicians' },
@@ -25,30 +26,31 @@ export default function TrustBar() {
           className="flex items-center gap-6 md:gap-8 md:justify-center overflow-x-auto hide-scrollbar"
           style={{ scrollSnapType: 'x mandatory', paddingLeft: '2px', paddingRight: '2px' }}
         >
-          {badges.map(({ icon: Icon, label }) => (
-            <div
-              key={label}
-              className="flex flex-col items-center gap-2 flex-shrink-0"
-              style={{ minWidth: '100px', scrollSnapAlign: 'center' }}
-            >
+          {badges.map(({ icon: Icon, label }, index) => (
+            <ScrollReveal key={label} delay={index * 80} as="div">
               <div
-                className="flex items-center justify-center rounded-lg"
-                style={{
-                  width: 40,
-                  height: 40,
-                  backgroundColor: 'var(--kora-brand-subtle)',
-                }}
-                aria-hidden="true"
+                className="flex flex-col items-center gap-2 flex-shrink-0"
+                style={{ minWidth: '100px', scrollSnapAlign: 'center' }}
               >
-                <Icon size={18} strokeWidth={1.75} style={{ color: 'var(--kora-brand)' }} />
+                <div
+                  className="flex items-center justify-center rounded-lg"
+                  style={{
+                    width: 40,
+                    height: 40,
+                    backgroundColor: 'var(--kora-brand-subtle)',
+                  }}
+                  aria-hidden="true"
+                >
+                  <Icon size={18} strokeWidth={1.75} style={{ color: 'var(--kora-brand)' }} />
+                </div>
+                <span
+                  className="text-[13px] font-medium text-center leading-tight"
+                  style={{ color: 'var(--kora-text-body)' }}
+                >
+                  {label}
+                </span>
               </div>
-              <span
-                className="text-[13px] font-medium text-center leading-tight"
-                style={{ color: 'var(--kora-text-body)' }}
-              >
-                {label}
-              </span>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

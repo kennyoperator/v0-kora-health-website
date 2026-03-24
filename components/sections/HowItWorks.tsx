@@ -70,7 +70,7 @@ export default function HowItWorks() {
             {steps.map((step, i) => {
               const Icon = step.icon
               return (
-                <ScrollReveal key={step.number} delay={i * 80}>
+                <ScrollReveal key={step.number} delay={i * 150}>
                   {/* Mobile: left border connector */}
                   <div className="md:hidden flex gap-5">
                     <div className="flex flex-col items-center">

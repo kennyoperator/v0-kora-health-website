@@ -54,7 +54,7 @@ export default function ResultsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
           {stats.map((item, i) => (
-            <ScrollReveal key={item.stat} delay={i * 80}>
+            <ScrollReveal key={item.stat} delay={i * 120} variant="scale">
               <div
                 className="rounded-2xl p-6 h-full flex flex-col"
                 style={{

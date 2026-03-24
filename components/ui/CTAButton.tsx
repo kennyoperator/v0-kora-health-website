@@ -58,8 +58,8 @@ export default function CTAButton({
     const t = e.currentTarget as HTMLElement
     if (variant === 'primary') {
       t.style.backgroundColor = 'var(--kora-brand-hover)'
-      t.style.transform = 'translateY(-1px)'
-      t.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'
+      t.style.transform = 'translateY(-2px)'
+      t.style.boxShadow = '0 8px 20px rgba(27, 58, 92, 0.18)'
     } else if (variant === 'secondary') {
       t.style.backgroundColor = 'var(--kora-brand-subtle)'
     }
@@ -77,6 +77,15 @@ export default function CTAButton({
     }
   }
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    if (disabled) return
+    const t = e.currentTarget as HTMLElement
+    if (variant === 'primary') {
+      t.style.transform = 'translateY(0)'
+      t.style.boxShadow = '0 4px 10px rgba(27, 58, 92, 0.12)'
+    }
+  }
+
   const combinedStyle = { ...baseStyle, ...variantStyle }
 
   if (href) {
@@ -89,6 +98,7 @@ export default function CTAButton({
         style={combinedStyle}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onMouseDown={handleMouseDown}
       >
         {children}
       </a>
@@ -104,6 +114,7 @@ export default function CTAButton({
       style={combinedStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onMouseDown={handleMouseDown}
     >
       {children}
     </button>

@@ -49,8 +49,7 @@ export default function ExpectationTimeline() {
         </ScrollReveal>
 
         {/* Desktop: horizontal timeline */}
-        <ScrollReveal delay={80}>
-          <div className="hidden md:flex items-start gap-0 mt-14 relative">
+        <div className="hidden md:flex items-start gap-0 mt-14 relative">
             {/* Connecting line */}
             <div
               className="absolute top-[5px] left-[calc(12.5%+6px)] right-[calc(12.5%+6px)]"
@@ -58,7 +57,8 @@ export default function ExpectationTimeline() {
               aria-hidden="true"
             />
             {stages.map((stage, i) => (
-              <div key={stage.period} className="flex-1 flex flex-col items-center text-center px-4">
+              <ScrollReveal key={stage.period} delay={i * 150} className="flex-1">
+                <div className="flex flex-col items-center text-center px-4">
                 {/* Dot */}
                 <div
                   className="rounded-full flex-shrink-0 relative z-10"
@@ -137,6 +137,7 @@ export default function ExpectationTimeline() {
                   </div>
                 )}
               </div>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -184,7 +185,6 @@ export default function ExpectationTimeline() {
               </div>
             ))}
           </div>
-        </ScrollReveal>
       </div>
     </section>
   )

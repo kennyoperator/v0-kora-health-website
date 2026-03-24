@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { useRouter } from 'next/navigation'
 import { Lock, Loader2 } from 'lucide-react'
 import PillSelect from '@/components/ui/PillSelect'
 import ScrollReveal from '@/components/ui/ScrollReveal'
@@ -109,7 +108,6 @@ const dividerStyle: React.CSSProperties = {
 }
 
 export default function QualificationSection() {
-  const router = useRouter()
   const formRef = useRef<HTMLDivElement>(null)
   const [submitting, setSubmitting] = useState(false)
   const [errors, setErrors] = useState<FormErrors>({})
@@ -158,10 +156,9 @@ export default function QualificationSection() {
     }
 
     setSubmitting(true)
-    console.log('[v0] Form submitted:', form)
 
     await new Promise(resolve => setTimeout(resolve, 1500))
-    router.push('/thank-you')
+    window.location.href = '/thank-you'
   }
 
   return (
