@@ -67,17 +67,23 @@ export default function FinalCTA() {
               </div>
             </div>
 
-            {/* Right — aspirational image */}
+            {/* Right — Reta vial with floating animation */}
             <div className="flex justify-center md:justify-end">
-              <div className="max-w-xs w-full">
-                <Image
-                  src="/img-woman-confident.png"
-                  alt="Confident Filipino woman after achieving her health goals"
-                  width={380}
-                  height={380}
-                  className="w-full h-auto rounded-2xl"
-                  style={{ boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
-                />
+              <div className="max-w-xs w-full flex items-center justify-center">
+                <div
+                  style={{
+                    animation: 'gentleFloat 4s ease-in-out infinite',
+                  }}
+                >
+                  <Image
+                    src="/reta-vial.png"
+                    alt="Kora Health Retatrutide 10mg vial"
+                    width={280}
+                    height={280}
+                    className="w-auto h-auto"
+                    style={{ maxWidth: '280px' }}
+                  />
+                </div>
               </div>
             </div>
           </div>
