@@ -212,16 +212,17 @@ export default function PatientResults() {
                   className="absolute inset-0 overflow-hidden"
                   style={{ width: `${sliderPos}%` }}
                 >
-                  <Image
+                  {/* Use a plain <img> here — fill+style.width on Next/Image causes a hard error */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={currentResult.before}
                     alt={`${currentResult.name} before`}
-                    fill
-                    className="object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                     style={{
-                      maxWidth: 'none',
                       width: sliderRef.current
                         ? `${sliderRef.current.offsetWidth}px`
                         : '100%',
+                      maxWidth: 'none',
                     }}
                     draggable={false}
                   />
