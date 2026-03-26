@@ -76,7 +76,7 @@ export default function FinalCTA() {
                   }}
                 >
                   <Image
-                    src="/reta-vial.png"
+                    src="/reta-vial-transparent.png"
                     alt="Kora Health Retatrutide 10mg vial"
                     width={280}
                     height={280}
