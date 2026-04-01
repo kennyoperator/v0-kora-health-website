@@ -6,8 +6,8 @@ export default function MobileStickyBar() {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    const formSection = document.getElementById('qualify')
-    if (!formSection) return
+    const productSection = document.getElementById('product')
+    if (!productSection) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,12 +15,12 @@ export default function MobileStickyBar() {
       },
       { threshold: 0.1 }
     )
-    observer.observe(formSection)
+    observer.observe(productSection)
     return () => observer.disconnect()
   }, [])
 
-  const scrollToForm = () => {
-    document.getElementById('qualify')?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToProduct = () => {
+    document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -36,7 +36,7 @@ export default function MobileStickyBar() {
       aria-hidden={!visible}
     >
       <button
-        onClick={scrollToForm}
+        onClick={scrollToProduct}
         className="w-full inline-flex items-center justify-center font-medium rounded-xl cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         style={{
           backgroundColor: 'var(--kora-brand)',
@@ -62,7 +62,7 @@ export default function MobileStickyBar() {
           t.style.boxShadow = '0 4px 10px rgba(27, 58, 92, 0.12)'
         }}
       >
-        Book Free Consultation
+        Shop Retatrutide
       </button>
     </div>
   )

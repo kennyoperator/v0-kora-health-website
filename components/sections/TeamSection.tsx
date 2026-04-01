@@ -181,8 +181,8 @@ export default function TeamSection() {
         {/* CTA */}
         <ScrollReveal delay={400}>
           <div className="flex justify-center mt-8">
-            <CTAButton variant="primary" onClick={scrollToForm}>
-              Book Your Free Consultation
+            <CTAButton variant="primary" onClick={scrollToProduct}>
+              Shop Retatrutide
             </CTAButton>
           </div>
         </ScrollReveal>
